@@ -1,0 +1,41 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "employeeId": "EMP001",
+      "fullName": "Meet Kumar",
+      "email": "meet.kumar@example.com",
+      "phone": "9876543210",
+      "address": "Surat",
+      "department": "sales"
+    },
+    {
+      "id": "2",
+      "employeeId": "EMP002",
+      "fullName": "Priya Sharma",
+      "email": "priya.sharma@example.com",
+      "phone": "9876001122",
+      "address": "Ahmedabad",
+      "department": "IT"
+    },
+    {
+      "id": "4",
+      "employeeId": "EMP004",
+      "fullName": "Meena Kaur",
+      "email": "meena.kaur@example.com",
+      "phone": "9988776655",
+      "address": "Rajkot",
+      "department": "Sales"
+    },
+    {
+      "id": "5",
+      "employeeId": "EMP005",
+      "fullName": "Harsh Mehta",
+      "email": "harsh.mehta@example.com",
+      "phone": "9898123456",
+      "address": "Surat",
+      "department": "IT"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
