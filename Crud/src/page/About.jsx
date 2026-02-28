@@ -11,7 +11,6 @@ function About() {
     phone: "",
     address: "",
     department: "",
-    image: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -73,7 +72,6 @@ function About() {
           "phone",
           "address",
           "department",
-          "image",
         ].map((field) => (
           <div key={field} className="mb-4">
             <label className="block font-semibold capitalize">{field}</label>
@@ -87,20 +85,6 @@ function About() {
             />
             {errors[field] && (
               <p className="text-sm text-red-600 mt-1">{errors[field]}</p>
-            )}
-            {field === "image" && (
-              <div>
-                {form.image && (
-                  <img
-                    src={form.image}
-                    alt="preview"
-                    className="w-24 h-24 object-cover rounded-md mt-2"
-                    onError={(e) => {
-                      e.currentTarget.src = "https://via.placeholder.com/96";
-                    }}
-                  />
-                )}
-              </div>
             )}
           </div>
         ))}

@@ -13,7 +13,6 @@ function Sever() {
     phone: "",
     address: "",
     department: "",
-    image: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -39,7 +38,6 @@ function Sever() {
     const newErrors = {};
     const isValidEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
     const isNumeric = (v) => /^\d+$/.test(v);
-    const isImageUrl = (v) => /^https?:\/\/.+\.(jpg|jpeg|png|gif)$/i.test(v);
 
     if (!form.fullName || form.fullName.trim().length < 3) {
       newErrors.fullName = "Name must be at least 3 characters.";
@@ -49,9 +47,6 @@ function Sever() {
     }
     if (!form.phone || !isNumeric(form.phone)) {
       newErrors.phone = "Phone must contain only numbers.";
-    }
-    if (!form.image || !isImageUrl(form.image)) {
-      newErrors.image = "Provide an online image URL (jpg, jpeg, png, gif).";
     }
 
     setErrors(newErrors);
@@ -87,7 +82,6 @@ function Sever() {
           "phone",
           "address",
           "department",
-          "image",
         ].map((field) => (
           <div key={field} className="mb-4">
             <label className="block font-semibold capitalize mb-1">
@@ -104,20 +98,6 @@ function Sever() {
             />
             {errors[field] && (
               <p className="text-sm text-red-600 mt-1">{errors[field]}</p>
-            )}
-            {field === "image" && (
-              <div>
-                {form.image && (
-                  <img
-                    src={form.image}
-                    alt="preview"
-                    className="w-24 h-24 object-cover rounded-md mt-2"
-                    onError={(e) => {
-                      e.currentTarget.src = "https://via.placeholder.com/96";
-                    }}
-                  />
-                )}
-              </div>
             )}
           </div>
         ))}
